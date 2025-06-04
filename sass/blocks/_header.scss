@@ -53,7 +53,7 @@
         width: 7rem;
     }
 
-    &__burger-icon{
+    &__burger{
         display: none;
     }
 }
@@ -93,6 +93,18 @@
         }
 
         &__nav{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 43.75rem) {
+    .btns_header{
+        display: none;
+    }
+
+    .header{
+        &__phone{
             display: none;
         }
     }
