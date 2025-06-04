@@ -52,4 +52,48 @@
         text-decoration: none;
         width: 7rem;
     }
+
+    &__burger-icon{
+        display: none;
+    }
+}
+
+@media (max-width: 75rem) {
+    .header{
+        &__burger{
+            display: flex;
+            height: 23px;
+            width: 30px;
+            align-items: center;
+            position: relative;
+
+            span{
+                height: 3px;
+                width: 30px;
+                background-color: #FFFFFF;
+                border-radius: 3px;
+            }           
+        }
+
+        &__burger::before, &__burger::after{
+            content: "";
+            position: absolute;        
+            height: 3px;
+            width: 30px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+        }
+
+        &__burger::before{
+            top: 0;
+        }     
+
+        &__burger::after{
+            bottom: 0;
+        }
+
+        &__nav{
+            display: none;
+        }
+    }
 }
