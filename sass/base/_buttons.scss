@@ -1,0 +1,16 @@
+.btns{
+    border: none;
+    cursor: pointer;
+    color: var(--color_on_shine);
+    background-color: var(--shining_elem);
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+}
+.btns:hover{
+    color: var(--shining_elem);
+    background-color: var(--main_bg);
+    border: 1px solid var(--shining_elem);
+    transform: scale(1.04, 1.04);
+}

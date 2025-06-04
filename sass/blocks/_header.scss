@@ -1,0 +1,111 @@
+.header{
+    width: 100%;
+    height: 10rem;
+    background-color: var(--main_bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__inner{
+        max-width: 1920px;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+
+    &__nav{
+        display: flex;
+        gap: 5rem;
+
+        a{
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: var(--main_font);
+            transition: all 0.5s;
+            position: relative;
+        }
+        a:hover{
+            color: var(--shining_elem);
+        }
+        a::after{
+            content: "";
+            display: block;
+            position: absolute;
+            height: 2px;
+            left: 0;
+            width: 0;
+            background-color: var(--shining_elem);
+            transition: all 0.5s;
+        }
+        a:hover::after{
+            width: 100%;
+        }
+    }
+
+    &__phone{
+        color: var(--main_font);
+        font-size: 1.6rem;
+        text-decoration: none;
+        width: 7rem;
+    }
+
+    &__burger{
+        display: none;
+    }
+}
+
+@media (max-width: 75rem) {
+    .header{
+        &__burger{
+            display: flex;
+            height: 23px;
+            width: 30px;
+            align-items: center;
+            position: relative;
+
+            span{
+                height: 3px;
+                width: 30px;
+                background-color: var(--main_font);
+                border-radius: 3px;
+            }           
+        }
+
+        &__burger::before, &__burger::after{
+            content: "";
+            position: absolute;        
+            height: 3px;
+            width: 30px;
+            background-color: var(--main_font);
+            border-radius: 3px;
+        }
+
+        &__burger::before{
+            top: 0;
+        }     
+
+        &__burger::after{
+            bottom: 0;
+        }
+
+        &__nav{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 43.75rem) {
+    .btns_header{
+        display: none;
+    }
+
+    .header{
+        &__phone{
+            display: none;
+        }
+    }
+}
