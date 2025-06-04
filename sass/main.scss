@@ -1,5 +1,6 @@
 @import "base/buttons";
 @import "blocks/header";
+@import "blocks/footer";
 
 :root {
     --main_bg: #272727;
@@ -29,5 +30,5 @@
 }
 
 .container {
-    width: 90%;
+    padding: 0 3%;
 }
