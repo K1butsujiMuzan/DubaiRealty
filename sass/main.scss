@@ -1,5 +1,6 @@
 @import "base/buttons";
 @import "blocks/header";
+@import "blocks/footer";
 
 :root {
     --main_bg: #272727;
@@ -18,16 +19,16 @@
     --color_on_shine: #fff;
 }
 
-:root{
+:root {
     font-size: 62.5%;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
-    width: 90%;
+.container {
+    padding: 0 3%;
 }
-
