@@ -39,7 +39,7 @@ modalBurger.addEventListener("click", function(e) {
 //Theme
 const themeCheck = document.getElementById("checkbox");
 const themeCheck1 = document.getElementById("checkbox1");
-const logoImage = document.querySelector(".logoImage")
+const logoImage = document.querySelectorAll(".logoImage")
 let darkTheme = true;
 
 themeCheck.addEventListener("click", function(e) {
@@ -54,11 +54,15 @@ function changeTheme(theme1, theme2) {
     if(theme1.checked) {
         theme2.checked = true;
         document.documentElement.setAttribute("data-light", "true");
-        logoImage.src = "../pics/icons/LogoLight.svg";
+        logoImage.forEach(img => {
+            img.src = "../pics/icons/LogoLight.svg";
+        });
         darkTheme = false;
     } else {
         document.documentElement.removeAttribute("data-light");
-        logoImage.src = "../pics/icons/Logo.svg";
+        logoImage.forEach(img => {
+            img.src = "../pics/icons/Logo.svg";
+        });
         darkTheme = true;
         theme2.checked = false;
     }
