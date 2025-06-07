@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <div class="container header__inner">
-            <a class="logo" href="../html/main.html"><img src="../pics/icons/Logo.png" alt=""></a>
+            <a class="logo" href="../html/main.html"><img class="logoImage" src="../pics/icons/Logo.svg" alt=""></a>
             <nav class="header__nav">
                 <a href="">buy</a>
                 <a href="">blog</a>
@@ -20,13 +20,34 @@
                 <a href="">contact</a>
             </nav>
             <button class="btns btns_header">book a consultation</button>
-            <button>4to-to</button>
+            <div class="switch header__switch">
+                <input type="checkbox" class="switch__checkbox" id="checkbox">
+                <label for="checkbox" class="switch__slider"></label>
+            </div>
             <a class="header__phone" href="tel:+72126742510">+7 (212) 674-25-10</a>
             <div class="header__burger">
                 <span></span>
             </div>
         </div>
     </header>
+
+    <div class="burger-modal">
+        <div class="burger-modal__inner">
+            <div class="burger-modal__links">
+                <a href="">buy</a>
+                <a href="">blog</a>
+                <a href="">about</a>
+                <a href="">contact</a>
+            </div>
+            <span></span>
+            <button class="btns burger-modal__btns_burger">book a consultation</button>
+            <a class="burger-modal__phone" href="tel:+72126742510">+7 (212) 674-25-10</a>
+            <div class="switch burger-modal__switch">
+                <input type="checkbox" class="switch__checkbox" id="checkbox1">
+                <label for="checkbox1" class="switch__slider"></label>
+            </div>
+        </div>
+    </div>
     <script src="../js/main.js"></script>
 </body>
 

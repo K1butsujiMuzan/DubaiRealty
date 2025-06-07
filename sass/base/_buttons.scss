@@ -14,3 +14,43 @@
     border: 1px solid var(--shining_elem);
     transform: scale(1.04, 1.04);
 }
+
+.switch{
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+    display: inline-block;
+    &__checkbox{
+        display: none;     
+    }
+    &__slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--shining_elem);
+        cursor: pointer;
+    }
+    &__slider::before{
+        content: "";
+        position: absolute;
+        background-color: var(--main_bg);
+        height: 1.3rem;
+        width: 1.3rem;
+        top: 1px;
+        left: 1px;
+        transition: all 0.3s;
+    }
+    &__checkbox:checked + &__slider::before{
+        transform: translateX(15px);
+    }
+}
+
+    
+
+    
+
+    
+
+    
