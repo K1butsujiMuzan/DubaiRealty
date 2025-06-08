@@ -1,6 +1,4 @@
 "use strict";
-//КОТ ДЛЯ БУРГЕРА
-
 //ВЫПАДАЮЩЕЕ МЕНЮ В ФУТЕРЕ
 
 const dropDown = document.querySelectorAll('.footer__dropdown-arrow'),
@@ -35,8 +33,21 @@ modalBurger.addEventListener("click", function(e) {
 //Theme
 const themeCheck = document.getElementById("checkbox");
 const themeCheck1 = document.getElementById("checkbox1");
-const logoImage = document.querySelectorAll(".logoImage")
-let darkTheme = true;
+const logoImage = document.querySelectorAll(".logoImage");
+
+//localStorage
+if (window.localStorage.getItem('lightTheme') === 'true'){
+    themeCheck.checked = true;
+    themeCheck1.checked = false;
+    document.documentElement.setAttribute("data-light", "");
+    logoImage.forEach(img => img.src = "../pics/icons/LogoLight.svg");
+    
+}else{
+    document.documentElement.removeAttribute("data-light");
+    logoImage.forEach(img => img.src = "../pics/icons/Logo.svg");
+    themeCheck.checked = false;
+    themeCheck1.checked = true;
+}
 
 themeCheck.addEventListener("click", function(e) {
     changeTheme(themeCheck, themeCheck1);
@@ -49,13 +60,13 @@ themeCheck1.addEventListener("click", function(e) {
 function changeTheme(theme1, theme2) {
     if(theme1.checked) {
         theme2.checked = true;
-        document.documentElement.setAttribute("data-light", "true");
+        document.documentElement.setAttribute("data-light", "");
         logoImage.forEach(img => img.src = "../pics/icons/LogoLight.svg");
-        darkTheme = false;
+        window.localStorage.setItem('lightTheme', true);
     } else {
         document.documentElement.removeAttribute("data-light");
         logoImage.forEach(img => img.src = "../pics/icons/Logo.svg");
-        darkTheme = true;
+        window.localStorage.setItem('lightTheme', false);        
         theme2.checked = false;
     }
 }
