@@ -4,15 +4,11 @@
 //ВЫПАДАЮЩЕЕ МЕНЮ В ФУТЕРЕ
 
 const dropDown = document.querySelectorAll('.footer__dropdown-arrow'),
-      listInfo = document.querySelectorAll('.footer__info-block'),
-      footer = document.querySelector('.footer');
+      listInfo = document.querySelectorAll('.footer__info-block');
 
 dropDown.forEach((item, iter) => {
     item.addEventListener('click', () => {
         listInfo[iter].classList.toggle('info-block_active');
-        (!footer.hasAttribute('data-active')) 
-        ? footer.setAttribute('data-active', '')
-        : footer.removeAttribute('data-active') 
     });
 
 });
@@ -54,11 +50,11 @@ function changeTheme(theme1, theme2) {
     if(theme1.checked) {
         theme2.checked = true;
         document.documentElement.setAttribute("data-light", "true");
-        logoImage.forEach(item => item.src = "../pics/icons/LogoLight.svg")
+        logoImage.forEach(img => img.src = "../pics/icons/LogoLight.svg");
         darkTheme = false;
     } else {
         document.documentElement.removeAttribute("data-light");
-        logoImage.forEach(item => item.src = "../pics/icons/Logo.svg")
+        logoImage.forEach(img => img.src = "../pics/icons/Logo.svg");
         darkTheme = true;
         theme2.checked = false;
     }
