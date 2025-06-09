@@ -93,7 +93,6 @@
             width: 30px;
             background-color: var(--main_font);
             border-radius: 3px;
-            transition: all 0.5s;
         }
 
         &__burger::before {
@@ -123,7 +122,11 @@
         }
     }
     .burger-modal.Active{
-        display: block;       
+        display: block;      
+        
+        .burger-modal__inner{
+            transform: translateX(0);
+        }
     }
     .burger-modal{
         display: none;

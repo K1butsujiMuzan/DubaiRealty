@@ -40,7 +40,22 @@ modalBurger.addEventListener("click", function(e) {
 const themeCheck = document.getElementById("checkbox");
 const themeCheck1 = document.getElementById("checkbox1");
 const logoImage = document.querySelectorAll(".logoImage")
-let darkTheme = true;
+
+if(window.localStorage.getItem("lightTheme") === "true") {
+    themeCheck.checked = true;
+    themeCheck1.checked = true;
+    document.documentElement.setAttribute("data-light", "true");
+    logoImage.forEach(img => {
+        img.src = "../pics/icons/LogoLight.svg";
+    });
+} else {
+    themeCheck.checked = false;
+    themeCheck1.checked = false;
+    document.documentElement.removeAttribute("data-light");
+    logoImage.forEach(img => {
+        img.src = "../pics/icons/Logo.svg";
+    });
+}
 
 themeCheck.addEventListener("click", function(e) {
     changeTheme(themeCheck, themeCheck1);
@@ -57,13 +72,13 @@ function changeTheme(theme1, theme2) {
         logoImage.forEach(img => {
             img.src = "../pics/icons/LogoLight.svg";
         });
-        darkTheme = false;
+        window.localStorage.setItem("lightTheme", true);
     } else {
         document.documentElement.removeAttribute("data-light");
         logoImage.forEach(img => {
             img.src = "../pics/icons/Logo.svg";
         });
-        darkTheme = true;
+        window.localStorage.setItem("lightTheme", false);
         theme2.checked = false;
     }
 }
